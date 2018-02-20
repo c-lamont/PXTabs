@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PXTabs.PXTab">
+    <ContentView.Content>
+        <StackLayout
+            Padding="8, 12, 8, 12"
+            HorizontalOptions="FillAndExpand">
+            <Image
+                x:Name="tabImage"
+                HorizontalOptions="Center"
+                Aspect="AspectFit"
+                HeightRequest="24"
+                WidthRequest="24" />
+            <Label
+                x:Name="tabLabel"
+                HorizontalOptions="Center"
+                XAlign="Center"
+                FontSize="12"
+                IsVisible="false" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
