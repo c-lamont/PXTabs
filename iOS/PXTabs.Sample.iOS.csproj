@@ -96,12 +96,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PXTabs.Sample\PXTabs.Sample.csproj">
-      <Project>{05AE964B-0035-4155-A260-F8D9EAEA0D42}</Project>
-      <Name>PXTabs.Sample</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
   </ItemGroup>
@@ -119,6 +113,12 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PXTabs.Sample.Core\PXTabs.Sample.Core.csproj">
+      <Project>{1D304649-13E2-4603-A4E2-7BBFD6840356}</Project>
+      <Name>PXTabs.Sample.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets')" />

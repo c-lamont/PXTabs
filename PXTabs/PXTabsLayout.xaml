@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PXTabs.PXTabsLayout"
+    HorizontalOptions="FillAndExpand">
+    <ContentView.Content>
+        <AbsoluteLayout
+            VerticalOptions="Fill"
+            HorizontalOptions="FillAndExpand">
+            <BoxView x:Name="sliderView" Color="Teal" HeightRequest="2"/>
+            <BoxView
+                x:Name="borderView"
+                AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+                AbsoluteLayout.LayoutBounds="0,0,1,.5"
+                BackgroundColor="Gray" />
+            <Grid
+                x:Name="tabsGrid"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0,0,1,1">
+            </Grid>
+        </AbsoluteLayout>
+    </ContentView.Content>
+</ContentView>

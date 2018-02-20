@@ -7,6 +7,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using PXTabs.Sample.Core;
+using Android;
 
 namespace PXTabs.Sample.Droid
 {
@@ -15,8 +17,8 @@ namespace PXTabs.Sample.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
+            //TabLayoutResource = Resource.Layout.Tabbar;
+            //ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
 
