@@ -40,6 +40,7 @@ namespace PXTabs
             if (propertyName == TextProperty.PropertyName)
             {
                 tabLabel.Text = Text;
+                tabLabel.IsVisible = string.IsNullOrEmpty(Text) ? false : true;
                 return;
             }
 

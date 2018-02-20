@@ -5,10 +5,14 @@
     x:Class="PXTabs.PXTabsLayout"
     HorizontalOptions="FillAndExpand">
     <ContentView.Content>
-        <AbsoluteLayout
+       <AbsoluteLayout
             VerticalOptions="Fill"
             HorizontalOptions="FillAndExpand">
-            <BoxView x:Name="sliderView" Color="Teal" HeightRequest="2"/>
+            <BoxView
+                x:Name="sliderView"
+                Color="Teal"
+                HeightRequest="4"
+                HorizontalOptions="Fill" />
             <BoxView
                 x:Name="borderView"
                 AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"

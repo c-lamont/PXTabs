@@ -61,6 +61,7 @@ namespace PXTabs
                 tabsGrid.Children.Add(tab, index, 0);
                 tab.GestureRecognizers.Add(new TapGestureRecognizer() { Command = new Command(() => TabSelected(tab)) });
             }
+            TabSelected(Tabs.ElementAt(0));
             SetSliderWidth();
         }
 

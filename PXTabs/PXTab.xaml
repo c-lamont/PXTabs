@@ -5,7 +5,7 @@
     x:Class="PXTabs.PXTab">
     <ContentView.Content>
         <StackLayout
-            Padding="8"
+            Padding="8, 12, 8, 12"
             HorizontalOptions="FillAndExpand">
             <Image
                 x:Name="tabImage"
@@ -17,7 +17,8 @@
                 x:Name="tabLabel"
                 HorizontalOptions="Center"
                 XAlign="Center"
-                FontSize="12" />
+                FontSize="12"
+                IsVisible="false" />
         </StackLayout>
     </ContentView.Content>
 </ContentView>

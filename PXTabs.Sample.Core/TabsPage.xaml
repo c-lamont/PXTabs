@@ -5,6 +5,8 @@
     x:Class="PXTabs.Sample.Core.TabsPage"
     xmlns:tabs="clr-namespace:PXTabs;assembly=PXTabs">
     <ContentPage.Content>
-    <tabs:PXTabsLayout x:Name="tabsLayout"/>
+        <tabs:PXTabsLayout
+            x:Name="tabsLayout"
+            VerticalOptions="EndAndExpand" />
     </ContentPage.Content>
 </ContentPage>
