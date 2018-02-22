@@ -2,15 +2,13 @@
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="PXTabs.PXTabsLayout"
-    HorizontalOptions="FillAndExpand">
+    x:Class="PXTabs.PXTabsLayout">
     <ContentView.Content>
        <AbsoluteLayout
             VerticalOptions="Fill"
             HorizontalOptions="FillAndExpand">
             <BoxView
                 x:Name="sliderView"
-                Color="Teal"
                 HeightRequest="4"
                 HorizontalOptions="Fill" />
             <BoxView

@@ -13,18 +13,19 @@ namespace PXTabs
 
         private void SetSelectedState()
         {
-            SetImageSource();
-            SetTextColor();
+            SetImage();
+            SetText();
         }
 
-        private void SetImageSource()
+        private void SetImage()
         {
             tabImage.Source = IsSelected ? SelectedImage : UnselectedImage;
         }
 
-        private void SetTextColor()
+        private void SetText()
         {
             tabLabel.TextColor = IsSelected ? SelectedColor : UnSelectedColor;
+            tabLabel.FontAttributes = IsSelected ? FontAttributes.Bold : FontAttributes.None;
         }
 
         protected override void OnPropertyChanged(string propertyName = null)
@@ -46,25 +47,25 @@ namespace PXTabs
 
             if (propertyName == SelectedColorProperty.PropertyName)
             {
-                SetTextColor();
+                SetText();
                 return;
             }
 
             if (propertyName == UnSelectedColorProperty.PropertyName)
             {
-                SetTextColor();
+                SetText();
                 return;
             }
 
             if (propertyName == SelectedImageProperty.PropertyName)
             {
-                SetImageSource();
+                SetImage();
                 return;
             }
 
             if (propertyName == UnselectedImageProperty.PropertyName)
             {
-                SetImageSource();
+                SetImage();
                 return;
             }
 

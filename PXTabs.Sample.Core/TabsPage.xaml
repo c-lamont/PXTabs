@@ -7,6 +7,10 @@
     <ContentPage.Content>
         <tabs:PXTabsLayout
             x:Name="tabsLayout"
-            VerticalOptions="EndAndExpand" />
+            VerticalOptions="EndAndExpand"
+            BorderColor="Blue"
+            SliderColor="Lime"
+            IsBorderVisible="true"
+            IsSliderVisible="true" />
     </ContentPage.Content>
 </ContentPage>
