@@ -35,13 +35,13 @@ namespace PXTabs
 
             if (propertyName == SliderColorProperty.PropertyName)
             {
-                sliderView.BackgroundColor = BorderColor;
+                sliderView.BackgroundColor = SliderColor;
                 return;
             }
 
             if (propertyName == IsSliderVisibleProperty.PropertyName)
             {
-                sliderView.IsVisible = IsBorderVisible;
+                sliderView.IsVisible = IsSliderVisible;
                 return;
             }
 
@@ -61,8 +61,8 @@ namespace PXTabs
                 tabsGrid.Children.Add(tab, index, 0);
                 tab.GestureRecognizers.Add(new TapGestureRecognizer() { Command = new Command(() => TabSelected(tab)) });
             }
-            TabSelected(Tabs.ElementAt(0));
             SetSliderWidth();
+            TabSelected(Tabs.ElementAt(0));
         }
 
         private void TabSelected(PXTab selectedTab)
