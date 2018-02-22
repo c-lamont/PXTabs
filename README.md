@@ -4,4 +4,4 @@
 - Check out the `TabsPage` in the examples for implementation.
 
 ## NuGet
-https://www.nuget.org/packages/pro-xamarin-tabs/1.0.0
+https://www.nuget.org/packages/pro.xamarin.forms.tabs/
