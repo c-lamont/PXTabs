@@ -11,21 +11,59 @@ namespace PXTabs
 
         public int TabId { get; set; }
 
-        private void SetSelectedState()
+        private void SetAll()
         {
-            SetImage();
+            SetImageSource();
+            SetImageSize();
             SetText();
+            SetTextColor();
+            SetTextAttribute();
         }
 
-        private void SetImage()
+        private void SetSelectedState()
+        {
+            SetImageSource();
+            SetTextColor();
+            SetTextAttribute();
+        }
+
+        private void SetImageSource()
         {
             tabImage.Source = IsSelected ? SelectedImage : UnselectedImage;
         }
 
+        private void SetImageSize()
+        {
+            AbsoluteLayout.SetLayoutBounds(tabImage, new Rectangle(.5, .5, ImageSize, ImageSize));
+            tabImageLayout.WidthRequest = ImageSize + 12;
+            tabImageLayout.HeightRequest = ImageSize + 12;
+        }
+
         private void SetText()
         {
+            tabLabel.Text = Text;
+            tabLabel.IsVisible = string.IsNullOrEmpty(Text) ? false : true;
+        }
+
+        private void SetTextColor()
+        {
             tabLabel.TextColor = IsSelected ? SelectedColor : UnSelectedColor;
+        }
+
+        private void SetTextAttribute()
+        {
             tabLabel.FontAttributes = IsSelected ? FontAttributes.Bold : FontAttributes.None;
+        }
+
+        private void SetTextSize()
+        {
+            tabLabel.FontSize = TextSize;
+        }
+
+        private void SetBadge()
+        {
+            badgeLayout.IsVisible = BadgeCount > 0;
+            badgeLabel.Text = BadgeCount > 99 ? "99" : BadgeCount.ToString();
         }
 
         protected override void OnPropertyChanged(string propertyName = null)
@@ -40,8 +78,7 @@ namespace PXTabs
 
             if (propertyName == TextProperty.PropertyName)
             {
-                tabLabel.Text = Text;
-                tabLabel.IsVisible = string.IsNullOrEmpty(Text) ? false : true;
+                SetText();
                 return;
             }
 
@@ -59,26 +96,31 @@ namespace PXTabs
 
             if (propertyName == SelectedImageProperty.PropertyName)
             {
-                SetImage();
+                SetImageSource();
                 return;
             }
 
             if (propertyName == UnselectedImageProperty.PropertyName)
             {
-                SetImage();
+                SetImageSource();
                 return;
             }
 
             if (propertyName == ImageSizeProperty.PropertyName)
             {
-                tabImage.WidthRequest = ImageSize;
-                tabImage.HeightRequest = ImageSize;
+                SetImageSize();
                 return;
             }
 
             if (propertyName == TextSizeProperty.PropertyName)
             {
-                tabLabel.FontSize = TextSize;
+                SetTextSize();
+                return;
+            }
+
+            if (propertyName == BadgeCountProperty.PropertyName)
+            {
+                SetBadge();
                 return;
             }
         }
@@ -193,6 +235,20 @@ namespace PXTabs
         {
             get => (double)GetValue(TextSizeProperty);
             set => SetValue(TextSizeProperty, value);
+        }
+
+        public static readonly BindableProperty BadgeCountProperty =
+            BindableProperty.Create(
+                nameof(BadgeCount),
+                typeof(int),
+                typeof(PXTab),
+                0,
+                BindingMode.OneWay);
+
+        public int BadgeCount
+        {
+            get => (int)GetValue(BadgeCountProperty);
+            set => SetValue(BadgeCountProperty, value);
         }
     }
 }

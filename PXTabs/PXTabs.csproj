@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageVersion>1.0</PackageVersion>
+    <PackageVersion>1.1</PackageVersion>
     <Authors>Chris Lamont</Authors>
-    <Description>A simple tab layout for Xamarin Forms</Description>
+    <Description>A simple customizable tab layout for Xamarin Forms</Description>
     <PackOnBuild>true</PackOnBuild>
-    <PackageId>pro-xamarin-tabs</PackageId>
+    <PackageId>pro.xamarin.forms.tabs</PackageId>
+    <PackageProjectUrl>https://github.com/c-lamont/PXTabs</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
