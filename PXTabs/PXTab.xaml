@@ -6,13 +6,39 @@
     <ContentView.Content>
         <StackLayout
             Padding="8, 12, 8, 12"
-            HorizontalOptions="FillAndExpand">
-            <Image
-                x:Name="tabImage"
-                HorizontalOptions="Center"
-                Aspect="AspectFit"
-                HeightRequest="24"
-                WidthRequest="24" />
+            HorizontalOptions="FillAndExpand"
+            Spacing="0">
+            <AbsoluteLayout
+            x:Name="tabImageLayout"
+                HeightRequest="36"
+                WidthRequest="36"
+                HorizontalOptions="Center">
+                <Image
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds=".5,.5,24,24"
+                    x:Name="tabImage"
+                    Aspect="AspectFit" />
+                <Frame
+                x:Name="badgeLayout"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="1,0,16,16"
+                    CornerRadius="8"
+                    HasShadow="false"
+                    BackgroundColor="Red"
+                    Padding="0"
+                    OutlineColor="White"
+                    IsClippedToBounds="true"
+                    IsVisible="false">
+                    <Label
+                    x:Name="badgeLabel"
+                        TextColor="White"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        XAlign="Center"
+                        YAlign="Center"
+                        FontSize="10" />
+                </Frame>
+            </AbsoluteLayout>
             <Label
                 x:Name="tabLabel"
                 HorizontalOptions="Center"
