@@ -5,11 +5,10 @@
     x:Class="PXTabs.Sample.Core.TabsPage"
     xmlns:tabs="clr-namespace:PXTabs;assembly=PXTabs">
     <ContentPage.Content>
-        <tabs:PXTabsLayout
-            x:Name="tabsLayout"
-            VerticalOptions="EndAndExpand"
-            BorderColor="Blue"
-            SliderColor="Lime"
+        <tabs:PXTabsView
+            x:Name="tabsView"
+            BorderColor="Teal"
+            SliderColor="Teal"
             IsBorderVisible="true"
             IsSliderVisible="true" />
     </ContentPage.Content>

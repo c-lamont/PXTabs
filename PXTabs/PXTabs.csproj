@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageVersion>1.1</PackageVersion>
+    <PackageVersion>1.3</PackageVersion>
     <Authors>Chris Lamont</Authors>
     <Description>A simple customizable tab layout for Xamarin Forms</Description>
     <PackOnBuild>true</PackOnBuild>

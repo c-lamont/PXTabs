@@ -5,11 +5,11 @@
     x:Class="PXTabs.PXTab">
     <ContentView.Content>
         <StackLayout
-            Padding="8, 12, 8, 12"
+            Padding="8"
             HorizontalOptions="FillAndExpand"
             Spacing="0">
             <AbsoluteLayout
-            x:Name="tabImageLayout"
+                x:Name="tabImageLayout"
                 HeightRequest="36"
                 WidthRequest="36"
                 HorizontalOptions="Center">
@@ -19,7 +19,7 @@
                     x:Name="tabImage"
                     Aspect="AspectFit" />
                 <Frame
-                x:Name="badgeLayout"
+                    x:Name="badgeLayout"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
                     AbsoluteLayout.LayoutBounds="1,0,16,16"
                     CornerRadius="8"
@@ -30,7 +30,7 @@
                     IsClippedToBounds="true"
                     IsVisible="false">
                     <Label
-                    x:Name="badgeLabel"
+                        x:Name="badgeLabel"
                         TextColor="White"
                         HorizontalOptions="Fill"
                         VerticalOptions="Fill"
