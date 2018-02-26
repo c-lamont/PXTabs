@@ -40,6 +40,3 @@ new PXTab()
 
 ### PXTabsLayout
 If you do not want the `PXTabsView` to handle the switching of the views, you can simply use the `PXTabsLayout` which will give you the tab bar that you can place anywhere in your view. Use the `Command<PXTab> TabSelectedCommand` property to detect the change in tab selection. 
-
-## Screenshots
-![alt text](https://photos.app.goo.gl/IPgfuIwGZ7UNeXXW2)
