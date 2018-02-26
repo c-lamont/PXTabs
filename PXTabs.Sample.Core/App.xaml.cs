@@ -6,7 +6,7 @@ namespace PXTabs.Sample.Core
     {
         public App()
         {
-            Application.Current.MainPage = new TabsPage();
+            Application.Current.MainPage = new NavigationPage(new TabsPage());
         }
     }
 }

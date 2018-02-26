@@ -27,6 +27,7 @@ namespace PXTabs
             SetImageSource();
             SetTextColor();
             SetTextAttribute();
+            SetTabView();
         }
 
         private void SetImageSource()
@@ -71,6 +72,14 @@ namespace PXTabs
         private void SetBadgeColor()
         {
             badgeLayout.BackgroundColor = BadgeColor;
+        }
+
+        private void SetTabView()
+        {
+            if (TabView != null)
+            {
+                TabView.IsVisible = IsSelected;
+            }
         }
 
         protected override void OnPropertyChanged(string propertyName = null)
@@ -276,6 +285,20 @@ namespace PXTabs
         {
             get => (Color)GetValue(BadgeColorProperty);
             set => SetValue(BadgeColorProperty, value);
+        }
+
+        public static readonly BindableProperty TabViewProperty =
+           BindableProperty.Create(
+               nameof(TabView),
+               typeof(View),
+               typeof(PXTab),
+               null,
+               BindingMode.OneWay);
+
+        public View TabView
+        {
+            get => (View)GetValue(TabViewProperty);
+            set => SetValue(TabViewProperty, value);
         }
     }
 }
