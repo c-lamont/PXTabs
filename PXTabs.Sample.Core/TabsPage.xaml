@@ -8,8 +8,8 @@
         <tabs:PXTabsLayout
             x:Name="tabsLayout"
             VerticalOptions="EndAndExpand"
-            BorderColor="Blue"
-            SliderColor="Lime"
+            BorderColor="Teal"
+            SliderColor="Teal"
             IsBorderVisible="true"
             IsSliderVisible="true" />
     </ContentPage.Content>

@@ -18,6 +18,8 @@ namespace PXTabs
             SetText();
             SetTextColor();
             SetTextAttribute();
+            SetBadgeCount();
+            SetBadgeColor();
         }
 
         private void SetSelectedState()
@@ -60,10 +62,15 @@ namespace PXTabs
             tabLabel.FontSize = TextSize;
         }
 
-        private void SetBadge()
+        private void SetBadgeCount()
         {
             badgeLayout.IsVisible = BadgeCount > 0;
             badgeLabel.Text = BadgeCount > 99 ? "99" : BadgeCount.ToString();
+        }
+
+        private void SetBadgeColor()
+        {
+            badgeLayout.BackgroundColor = BadgeColor;
         }
 
         protected override void OnPropertyChanged(string propertyName = null)
@@ -120,7 +127,13 @@ namespace PXTabs
 
             if (propertyName == BadgeCountProperty.PropertyName)
             {
-                SetBadge();
+                SetBadgeCount();
+                return;
+            }
+
+            if (propertyName == BadgeColorProperty.PropertyName)
+            {
+                SetBadgeColor();
                 return;
             }
         }
@@ -249,6 +262,20 @@ namespace PXTabs
         {
             get => (int)GetValue(BadgeCountProperty);
             set => SetValue(BadgeCountProperty, value);
+        }
+
+        public static readonly BindableProperty BadgeColorProperty =
+           BindableProperty.Create(
+               nameof(BadgeColor),
+               typeof(Color),
+               typeof(PXTab),
+               Color.Red,
+               BindingMode.OneWay);
+
+        public Color BadgeColor
+        {
+            get => (Color)GetValue(BadgeColorProperty);
+            set => SetValue(BadgeColorProperty, value);
         }
     }
 }
