@@ -4,7 +4,7 @@
 - Check out the `TabsPage` in the examples for implementation.
 
 ## NuGet
-https://www.nuget.org/packages/pro.xamarin.forms.tabs/
+https://www.nuget.org/packages/Plugin.ProXamTabs/
 
 ## Implementation
 All properties are bindable.
