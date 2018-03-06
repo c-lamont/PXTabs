@@ -3,9 +3,9 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="PXTabs.Sample.Core.TabsPage"
-    xmlns:tabs="clr-namespace:PXTabs;assembly=PXTabs">
+    xmlns:pxTabs="clr-namespace:PXTabs;assembly=PXTabs">
     <ContentPage.Content>
-        <tabs:PXTabsView
+        <pxTabs:PXTabsView
             x:Name="tabsView"
             BorderColor="Teal"
             SliderColor="Teal"

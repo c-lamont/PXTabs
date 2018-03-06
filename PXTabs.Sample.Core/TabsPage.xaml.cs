@@ -28,6 +28,20 @@ namespace PXTabs.Sample.Core
                 BadgeCount = badgeCount,
                 BadgeColor = Color.Blue
             };
+
+            return new PXTab()
+            {
+                TabView = new HomeView(),
+                Text = "Home",
+                SelectedImage = "tab_home",
+                UnselectedImage = "tab_home_gray",
+                SelectedColor = Color.Gray,
+                UnSelectedColor = Color.Black,
+                TextSize = 12,
+                ImageSize = 24,
+                BadgeCount = 3,
+                BadgeColor = Color.Blue
+            };
         }
     }
 }
