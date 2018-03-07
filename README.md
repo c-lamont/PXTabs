@@ -4,13 +4,13 @@
 - Check out the `TabsPage` in the examples for implementation.
 
 ## NuGet
-https://www.nuget.org/packages/Plugin.ProXamTabs/
+https://www.nuget.org/packages/Plugin.ProXamTabs
 
 ## Implementation
 All properties are bindable.
 
 ### PXTabsView
-1. If implementing in Xaml, add the namespace `xmlns:pxTabs="clr-namespace:PXTabs;assembly=PXTabs"`.
+1. If implementing in Xaml, add the namespace `xmlns:pxTabs="clr-namespace:Plugin.ProXamTabs.Shared;assembly=Plugin.ProXamTabs""`.
 2. Add the view to your page:
 ```
 <pxTabs:PXTabsView
