@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:BasePXTabsLayout xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Plugin.ProXamTabs.Shared.PXTabsView"
+             xmlns:local="clr-namespace:Plugin.ProXamTabs.Shared;assembly=Plugin.ProXamTabs">
+  <ContentView.Content>
+        <Grid
+            Padding="0, 1, 0, 0"
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="Auto" />
+            </Grid.RowDefinitions>
+            <StackLayout
+                Grid.Row="0"
+                x:Name="viewContainer"
+                Orientation="Horizontal">
+            </StackLayout>
+            <local:PXTabsLayout
+                x:Name="tabsLayout"
+                Grid.Row="1" />
+        </Grid>
+    </ContentView.Content>
+</local:BasePXTabsLayout>
