@@ -108,13 +108,13 @@ namespace Plugin.ProXamTabs.Shared
 
             if (propertyName == SelectedColorProperty.PropertyName)
             {
-                SetText();
+                SetTextColor();
                 return;
             }
 
             if (propertyName == UnSelectedColorProperty.PropertyName)
             {
-                SetText();
+                SetTextColor();
                 return;
             }
 
