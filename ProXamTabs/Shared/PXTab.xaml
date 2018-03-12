@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Plugin.ProXamTabs.Shared.PXTab">
-  <ContentView.Content>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Plugin.ProXamTabs.Shared.PXTab">
+    <ContentView.Content>
         <StackLayout
             Padding="8"
             HorizontalOptions="FillAndExpand"
@@ -15,7 +16,12 @@
                 <Image
                     AbsoluteLayout.LayoutFlags="PositionProportional"
                     AbsoluteLayout.LayoutBounds=".5,.5,24,24"
-                    x:Name="tabImage"
+                    x:Name="tabImageUnselected"
+                    Aspect="AspectFit" />
+                <Image
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds=".5,.5,24,24"
+                    x:Name="tabImageSelected"
                     Aspect="AspectFit" />
                 <Frame
                     x:Name="badgeLayout"
@@ -40,7 +46,7 @@
             </AbsoluteLayout>
             <Label
                 x:Name="tabLabel"
-                HorizontalOptions="Center"
+                HorizontalOptions="Fill"
                 XAlign="Center"
                 FontSize="12"
                 IsVisible="false" />

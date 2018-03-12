@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -49,6 +47,12 @@ namespace Plugin.ProXamTabs.Shared
                 SetSliderWidth();
                 return;
             }
+
+            if (propertyName == IsSliderOnBottomProperty.PropertyName)
+            {
+                SetSliderLocation();
+                return;
+            }
         }
 
         public void SetTabs()
@@ -61,6 +65,7 @@ namespace Plugin.ProXamTabs.Shared
                 tab.GestureRecognizers.Add(new TapGestureRecognizer() { Command = new Command(() => TabSelected(tab)) });
             }
             SetSliderWidth();
+            SetSliderLocation();
             TabSelected(Tabs.ElementAt(0));
         }
 
@@ -81,6 +86,13 @@ namespace Plugin.ProXamTabs.Shared
             {
                 TabsLayout.SliderView.WidthRequest = (this.Width / Tabs.Count());
             }
+        }
+
+        private void SetSliderLocation()
+        {
+            var yPos = IsSliderOnBottom ? 1 : 0;
+            AbsoluteLayout.SetLayoutBounds(TabsLayout.SliderView, new Rectangle(0, yPos, TabsLayout.SliderView.Width, TabsLayout.SliderView.Height));
+            AbsoluteLayout.SetLayoutFlags(TabsLayout.SliderView, AbsoluteLayoutFlags.PositionProportional);
         }
 
         private void SetSliderPosition(int index)
@@ -171,6 +183,20 @@ namespace Plugin.ProXamTabs.Shared
         {
             get => (bool)GetValue(IsSliderVisibleProperty);
             set => SetValue(IsSliderVisibleProperty, value);
+        }
+
+        public static readonly BindableProperty IsSliderOnBottomProperty =
+            BindableProperty.Create(
+                nameof(IsSliderOnBottom),
+                typeof(bool),
+                typeof(PXTabsLayout),
+                true,
+                BindingMode.OneWay);
+
+        public bool IsSliderOnBottom
+        {
+            get => (bool)GetValue(IsSliderOnBottomProperty);
+            set => SetValue(IsSliderOnBottomProperty, value);
         }
     }
 }

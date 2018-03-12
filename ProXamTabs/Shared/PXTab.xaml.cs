@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Plugin.ProXamTabs.Shared
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PXTab : ContentView
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class PXTab : ContentView
+    {
         public PXTab()
         {
             InitializeComponent();
@@ -19,33 +13,29 @@ namespace Plugin.ProXamTabs.Shared
 
         public int TabId { get; set; }
 
-        private void SetAll()
-        {
-            SetImageSource();
-            SetImageSize();
-            SetText();
-            SetTextColor();
-            SetTextAttribute();
-            SetBadgeCount();
-            SetBadgeColor();
-        }
-
         private void SetSelectedState()
         {
             SetImageSource();
             SetTextColor();
-            SetTextAttribute();
             SetTabView();
+            SetTextAttribute();
+        }
+
+        private void SetTextAttribute()
+        {
+            tabLabel.FontAttributes = IsSelected ? FontAttributes.Bold : FontAttributes.None;
         }
 
         private void SetImageSource()
         {
-            tabImage.Source = IsSelected ? SelectedImage : UnselectedImage;
+            tabImageSelected.IsVisible = IsSelected;
+            tabImageUnselected.IsVisible = !IsSelected;
         }
 
         private void SetImageSize()
         {
-            AbsoluteLayout.SetLayoutBounds(tabImage, new Rectangle(.5, .5, ImageSize, ImageSize));
+            AbsoluteLayout.SetLayoutBounds(tabImageUnselected, new Rectangle(.5, .5, ImageSize, ImageSize));
+            AbsoluteLayout.SetLayoutBounds(tabImageSelected, new Rectangle(.5, .5, ImageSize, ImageSize));
             tabImageLayout.WidthRequest = ImageSize + 12;
             tabImageLayout.HeightRequest = ImageSize + 12;
         }
@@ -59,11 +49,6 @@ namespace Plugin.ProXamTabs.Shared
         private void SetTextColor()
         {
             tabLabel.TextColor = IsSelected ? SelectedColor : UnSelectedColor;
-        }
-
-        private void SetTextAttribute()
-        {
-            tabLabel.FontAttributes = IsSelected ? FontAttributes.Bold : FontAttributes.None;
         }
 
         private void SetTextSize()
@@ -120,12 +105,14 @@ namespace Plugin.ProXamTabs.Shared
 
             if (propertyName == SelectedImageProperty.PropertyName)
             {
+                tabImageSelected.Source = SelectedImage;
                 SetImageSource();
                 return;
             }
 
             if (propertyName == UnselectedImageProperty.PropertyName)
             {
+                tabImageUnselected.Source = UnselectedImage;
                 SetImageSource();
                 return;
             }
