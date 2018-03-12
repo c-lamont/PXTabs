@@ -10,7 +10,7 @@
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
     <Version>1.0.0.0</Version>
-    <PackageVersion>1.5.1.0</PackageVersion>
+    <PackageVersion>1.5.2.0</PackageVersion>
     <PackOnBuild>true</PackOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
     <LangVersion>default</LangVersion>
@@ -83,37 +83,6 @@
     <None Remove="Shared\PXTab.xaml.cs" />
     <None Remove="Shared\PXTabsView.xaml.cs" />
   </ItemGroup>
-
-
-  <ItemGroup>
-    <EmbeddedResource Update="Shared\PXTab.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Shared\PXTabsView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <!--
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">
-    <Compile Include="Platforms\DotNet\**\*.cs" />
-  </ItemGroup>
-  -->
-
-
-  <!--
-  <ItemGroup Condition=" '$(TargetFramework)' == 'Tizen40' ">
-    <Compile Include="Platforms\Tizen\**\*.cs" />
-    <PackageReference Include="Tizen.NET" Version="4.0.0" />
-  </ItemGroup>
-  -->
-  
-  <!--
-    <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <Compile Include="Platforms\DotNet\**\*.cs" />
-  </ItemGroup>
-  -->
-
 
 
   <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
