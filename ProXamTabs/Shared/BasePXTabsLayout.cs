@@ -190,7 +190,7 @@ namespace Plugin.ProXamTabs.Shared
                 nameof(IsSliderOnBottom),
                 typeof(bool),
                 typeof(PXTabsLayout),
-                true,
+                false,
                 BindingMode.OneWay);
 
         public bool IsSliderOnBottom
