@@ -30,6 +30,12 @@ namespace Plugin.ProXamTabs.Shared
                 return;
             }
 
+            if (propertyName == IsBorderOnBottomProperty.PropertyName)
+            {
+                SetBorderPosition();
+                return;
+            }
+
             if (propertyName == SliderColorProperty.PropertyName)
             {
                 TabsLayout.SliderView.BackgroundColor = SliderColor;
@@ -101,6 +107,13 @@ namespace Plugin.ProXamTabs.Shared
             TabsLayout.SliderView.TranslateTo(xPos, 0, 250, Easing.SinInOut);
         }
 
+        private void SetBorderPosition()
+        {
+            var yPos = IsBorderOnBottom ? 1 : 0;
+            AbsoluteLayout.SetLayoutBounds(TabsLayout.BorderView, new Rectangle(0, yPos, 1, 0.5));
+            AbsoluteLayout.SetLayoutFlags(TabsLayout.BorderView, AbsoluteLayoutFlags.PositionProportional | AbsoluteLayoutFlags.WidthProportional);
+        }
+
         public static readonly BindableProperty TabSelectedCommandProperty =
             BindableProperty.Create(
                 nameof(TabSelectedCommand),
@@ -155,6 +168,20 @@ namespace Plugin.ProXamTabs.Shared
         {
             get => (bool)GetValue(IsBorderVisibleProperty);
             set => SetValue(IsBorderVisibleProperty, value);
+        }
+
+        public static readonly BindableProperty IsBorderOnBottomProperty =
+           BindableProperty.Create(
+               nameof(IsBorderOnBottom),
+               typeof(bool),
+               typeof(PXTabsLayout),
+               false,
+               BindingMode.OneWay);
+
+        public bool IsBorderOnBottom
+        {
+            get => (bool)GetValue(IsBorderOnBottomProperty);
+            set => SetValue(IsBorderOnBottomProperty, value);
         }
 
         public static readonly BindableProperty SliderColorProperty =

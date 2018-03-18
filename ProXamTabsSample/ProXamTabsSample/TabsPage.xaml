@@ -9,6 +9,9 @@
             BorderColor="Teal"
             SliderColor="Teal"
             IsBorderVisible="true"
-            IsSliderVisible="true" />
+            IsSliderVisible="true"
+            IsSliderOnBottom="True"
+            IsBorderOnBottom="true"
+            IsTabBarOnTop="True"/>
     </ContentPage.Content>
 </ContentPage>

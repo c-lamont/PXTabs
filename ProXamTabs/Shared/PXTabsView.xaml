@@ -5,6 +5,7 @@
              xmlns:local="clr-namespace:Plugin.ProXamTabs.Shared;assembly=Plugin.ProXamTabs">
   <ContentView.Content>
         <Grid
+            x:Name="tabViewGrid"
             Padding="0, 1, 0, 0"
             RowSpacing="0">
             <Grid.RowDefinitions>
