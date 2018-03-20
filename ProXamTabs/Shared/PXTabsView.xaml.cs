@@ -36,8 +36,7 @@ namespace Plugin.ProXamTabs.Shared
             if (propertyName == IsTabBarOnTopProperty.PropertyName)
             {
                 SetTabBarPosition();
-            }
-            
+            }            
         }
 
         private RowDefinition AutoRowDefinition => new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) };
@@ -60,6 +59,9 @@ namespace Plugin.ProXamTabs.Shared
                 tabViewGrid.Children.Add(viewContainer, 0, 0);
                 tabViewGrid.Children.Add(tabsLayout, 0, 1);
             }
+
+            IsBorderOnBottom = IsTabBarOnTop;
+            IsSliderOnBottom = IsTabBarOnTop;
         }
 
         public static readonly BindableProperty IsTabBarOnTopProperty =

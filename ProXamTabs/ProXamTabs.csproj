@@ -10,7 +10,7 @@
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
     <Version>1.0.0.0</Version>
-    <PackageVersion>1.5.3.0</PackageVersion>
+    <PackageVersion>1.5.4.0</PackageVersion>
     <PackOnBuild>true</PackOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
     <LangVersion>default</LangVersion>
