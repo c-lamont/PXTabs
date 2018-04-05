@@ -22,5 +22,6 @@ namespace Plugin.ProXamTabs.Shared
         public BoxView SliderView => sliderView;
         public BoxView BorderView => borderView;
         public Grid TabsGrid => tabsGrid;
+        public Image BackgroundImage => backgroundImage;
     }
 }

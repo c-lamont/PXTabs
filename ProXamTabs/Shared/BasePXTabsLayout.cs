@@ -59,6 +59,18 @@ namespace Plugin.ProXamTabs.Shared
                 SetSliderLocation();
                 return;
             }
+
+            if (propertyName == BackgroundImageSourceProperty.PropertyName)
+            {
+                TabsLayout.BackgroundImage.Source = BackgroundImageSource;
+                return;
+            }
+
+            if (propertyName == SelectedTabIndexProperty.PropertyName)
+            {
+                TabSelected(SelectedTabIndex);
+                return;
+            }
         }
 
         public void SetTabs()
@@ -72,7 +84,7 @@ namespace Plugin.ProXamTabs.Shared
             }
             SetSliderWidth();
             SetSliderLocation();
-            TabSelected(Tabs.ElementAt(0));
+            TabSelected(SelectedTabIndex);
         }
 
         private void TabSelected(PXTab selectedTab)
@@ -86,11 +98,34 @@ namespace Plugin.ProXamTabs.Shared
             SetSliderPosition(Tabs.IndexOf(selectedTab));
         }
 
+        private void TabSelected(int index)
+        {            
+            if (Tabs.Count() > index)
+            {
+                TabSelected(Tabs.ElementAt(index));
+            }
+        }
+
+        public static readonly BindableProperty SelectedTabIndexProperty =
+            BindableProperty.Create(
+                nameof(SelectedTabIndex),
+                typeof(int),
+                typeof(BasePXTabsLayout),
+                0,
+                BindingMode.TwoWay);
+
+        public int SelectedTabIndex
+        {
+            get => (int)GetValue(SelectedTabIndexProperty);
+            set => SetValue(SelectedTabIndexProperty, value);
+        }
+
         private void SetSliderWidth()
         {
             if (Tabs != null)
             {
                 TabsLayout.SliderView.WidthRequest = (this.Width / Tabs.Count());
+                SetSliderPosition(Tabs.IndexOf(Tabs.FirstOrDefault(t => t.IsSelected)));
             }
         }
 
@@ -103,7 +138,7 @@ namespace Plugin.ProXamTabs.Shared
 
         private void SetSliderPosition(int index)
         {
-            var xPos = TabsLayout.SliderView.Width * (index);
+            var xPos = TabsLayout.SliderView.WidthRequest * (index);
             TabsLayout.SliderView.TranslateTo(xPos, 0, 250, Easing.SinInOut);
         }
 
@@ -118,7 +153,7 @@ namespace Plugin.ProXamTabs.Shared
             BindableProperty.Create(
                 nameof(TabSelectedCommand),
                 typeof(Command<PXTab>),
-                typeof(PXTabsLayout),
+                typeof(BasePXTabsLayout),
                 null,
                 BindingMode.OneWay);
 
@@ -132,7 +167,7 @@ namespace Plugin.ProXamTabs.Shared
             BindableProperty.Create(
                 nameof(Tabs),
                 typeof(IEnumerable<PXTab>),
-                typeof(PXTabsLayout),
+                typeof(BasePXTabsLayout),
                 null,
                 BindingMode.OneWay);
 
@@ -146,7 +181,7 @@ namespace Plugin.ProXamTabs.Shared
             BindableProperty.Create(
                 nameof(BorderColor),
                 typeof(Color),
-                typeof(PXTabsLayout),
+                typeof(BasePXTabsLayout),
                 Color.Gray,
                 BindingMode.OneWay);
 
@@ -160,7 +195,7 @@ namespace Plugin.ProXamTabs.Shared
             BindableProperty.Create(
                 nameof(IsBorderVisible),
                 typeof(bool),
-                typeof(PXTabsLayout),
+                typeof(BasePXTabsLayout),
                 true,
                 BindingMode.OneWay);
 
@@ -174,7 +209,7 @@ namespace Plugin.ProXamTabs.Shared
            BindableProperty.Create(
                nameof(IsBorderOnBottom),
                typeof(bool),
-               typeof(PXTabsLayout),
+               typeof(BasePXTabsLayout),
                false,
                BindingMode.OneWay);
 
@@ -188,7 +223,7 @@ namespace Plugin.ProXamTabs.Shared
             BindableProperty.Create(
                 nameof(SliderColor),
                 typeof(Color),
-                typeof(PXTabsLayout),
+                typeof(BasePXTabsLayout),
                 Color.Gray,
                 BindingMode.OneWay);
 
@@ -202,7 +237,7 @@ namespace Plugin.ProXamTabs.Shared
             BindableProperty.Create(
                 nameof(IsSliderVisible),
                 typeof(bool),
-                typeof(PXTabsLayout),
+                typeof(BasePXTabsLayout),
                 true,
                 BindingMode.OneWay);
 
@@ -216,7 +251,7 @@ namespace Plugin.ProXamTabs.Shared
             BindableProperty.Create(
                 nameof(IsSliderOnBottom),
                 typeof(bool),
-                typeof(PXTabsLayout),
+                typeof(BasePXTabsLayout),
                 false,
                 BindingMode.OneWay);
 
@@ -224,6 +259,20 @@ namespace Plugin.ProXamTabs.Shared
         {
             get => (bool)GetValue(IsSliderOnBottomProperty);
             set => SetValue(IsSliderOnBottomProperty, value);
+        }
+
+        public static readonly BindableProperty BackgroundImageSourceProperty =
+            BindableProperty.Create(
+                nameof(BackgroundImageSource),
+                typeof(ImageSource),
+                typeof(BasePXTabsLayout),
+                null,
+                BindingMode.OneWay);
+
+        public ImageSource BackgroundImageSource
+        {
+            get => (ImageSource)GetValue(BackgroundImageSourceProperty);
+            set => SetValue(BackgroundImageSourceProperty, value);
         }
     }
 }

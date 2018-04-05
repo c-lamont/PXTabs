@@ -7,6 +7,10 @@
         <AbsoluteLayout
             VerticalOptions="Fill"
             HorizontalOptions="FillAndExpand">
+            <Image
+                x:Name="backgroundImage"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"/>
             <BoxView
                 x:Name="sliderView"
                 HeightRequest="4"
@@ -19,7 +23,9 @@
             <Grid
                 x:Name="tabsGrid"
                 AbsoluteLayout.LayoutFlags="All"
-                AbsoluteLayout.LayoutBounds="0,0,1,1">
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                ColumnSpacing="4"
+                Padding="2,0,2,0">
             </Grid>
         </AbsoluteLayout>
     </ContentView.Content>

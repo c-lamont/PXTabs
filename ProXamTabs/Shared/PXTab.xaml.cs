@@ -13,6 +13,12 @@ namespace Plugin.ProXamTabs.Shared
 
         public int TabId { get; set; }
 
+        public Label TabLabel => tabLabel;
+        public Image TabImageSelected => tabImageSelected;
+        public Image TabImageUnselected => tabImageUnselected;
+        public Frame BadgeFrame => badgeLayout;
+        public Label BadgeLabel => badgeLabel;
+
         private void SetSelectedState()
         {
             SetImageSource();
@@ -140,6 +146,12 @@ namespace Plugin.ProXamTabs.Shared
                 SetBadgeColor();
                 return;
             }
+
+            if (propertyName == TabPaddingProperty.PropertyName)
+            {
+                tabContainer.Padding = TabPadding;
+                return;
+            }            
         }
 
         public static readonly BindableProperty IsSelectedProperty =
@@ -294,6 +306,20 @@ namespace Plugin.ProXamTabs.Shared
         {
             get => (View)GetValue(TabViewProperty);
             set => SetValue(TabViewProperty, value);
+        }
+
+        public static readonly BindableProperty TabPaddingProperty =
+            BindableProperty.Create(
+                nameof(TabPadding),
+                typeof(int),
+                typeof(PXTab),
+                8,
+                BindingMode.OneWay);
+
+        public int TabPadding
+        {
+            get => (int)GetValue(TabPaddingProperty);
+            set => SetValue(TabPaddingProperty, value);
         }
     }
 }

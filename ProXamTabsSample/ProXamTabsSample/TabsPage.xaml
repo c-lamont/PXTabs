@@ -7,6 +7,11 @@
         <pxTabs:PXTabsView
             x:Name="tabsView"
             BorderColor="Teal"
-            SliderColor="Teal"/>
+            SliderColor="Teal"
+            IsBorderOnBottom="False"
+            IsBorderVisible="True"
+            IsSliderOnBottom="False"
+            IsSliderVisible="True"
+            IsTabBarOnTop="False"/>
     </ContentPage.Content>
 </ContentPage>
