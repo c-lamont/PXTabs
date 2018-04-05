@@ -6,7 +6,7 @@
     <ContentView.Content>
         <StackLayout
             x:Name="tabContainer"
-            Padding="8"
+            Padding="0,6,0,2"
             HorizontalOptions="FillAndExpand"
             Spacing="0">
             <AbsoluteLayout
