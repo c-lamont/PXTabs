@@ -36,6 +36,7 @@ namespace ProXamTabsSample
             };
             
             tabsView.Tabs = _tabs;
+            tabsView.SelectedTabIndex = 2;
         }
 
         private PXTab CreateTab(int id, View view, string text, string selectedImage, string unselectedImage, Color selectedColor, Color unselectedColor, int badgeCount = 0)
@@ -52,7 +53,8 @@ namespace ProXamTabsSample
                 TextSize = 12,
                 ImageSize = 24,
                 BadgeCount = badgeCount,
-                BadgeColor = Color.Blue
+                BadgeColor = Color.Blue,
+                TabPadding = 2
             };
             
         }

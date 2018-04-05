@@ -7,6 +7,10 @@
         <AbsoluteLayout
             VerticalOptions="Fill"
             HorizontalOptions="FillAndExpand">
+            <Image
+                x:Name="backgroundImage"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"/>
             <BoxView
                 x:Name="sliderView"
                 HeightRequest="4"

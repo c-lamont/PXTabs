@@ -5,6 +5,7 @@
     x:Class="Plugin.ProXamTabs.Shared.PXTab">
     <ContentView.Content>
         <StackLayout
+            x:Name="tabContainer"
             Padding="8"
             HorizontalOptions="FillAndExpand"
             Spacing="0">
@@ -14,14 +15,14 @@
                 WidthRequest="36"
                 HorizontalOptions="Center">
                 <Image
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
-                    AbsoluteLayout.LayoutBounds=".5,.5,24,24"
                     x:Name="tabImageUnselected"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds=".5,.5,24,24"                    
                     Aspect="AspectFit" />
                 <Image
+                    x:Name="tabImageSelected"
                     AbsoluteLayout.LayoutFlags="PositionProportional"
                     AbsoluteLayout.LayoutBounds=".5,.5,24,24"
-                    x:Name="tabImageSelected"
                     Aspect="AspectFit" />
                 <Frame
                     x:Name="badgeLayout"
@@ -49,7 +50,8 @@
                 HorizontalOptions="Fill"
                 XAlign="Center"
                 FontSize="12"
-                IsVisible="false" />
+                IsVisible="false" 
+                LineBreakMode="NoWrap"/>
         </StackLayout>
     </ContentView.Content>
 </ContentView>
