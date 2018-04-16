@@ -27,7 +27,7 @@ namespace Plugin.ProXamTabs.Shared
                 viewContainer.Children.Clear();
                 foreach (var tab in Tabs.Where(t => t.TabView != null))
                 {
-                    tab.TabView.IsVisible = false;
+                    tab.TabView.IsVisible = tab.IsSelected;
                     viewContainer.Children.Add(tab.TabView);
                 }
                 return;
