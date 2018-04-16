@@ -10,7 +10,7 @@
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
     <Version>1.0.0.0</Version>
-    <PackageVersion>1.5.4.0</PackageVersion>
+    <PackageVersion>1.5.6.0</PackageVersion>
     <PackOnBuild>true</PackOnBuild>
     <NeutralLanguage>en</NeutralLanguage>
     <LangVersion>default</LangVersion>
@@ -22,11 +22,11 @@
     
     <!--TODO: Fill these in-->
     <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageProjectUrl></PackageProjectUrl>
-    <RepositoryUrl></RepositoryUrl>
+    <PackageProjectUrl>https://www.nuget.org/packages/Plugin.ProXamTabs/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/c-lamont/PXTabs</RepositoryUrl>
     <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageIconUrl></PackageIconUrl>
-    <PackageTags>xamarin, windows, ios, android, xamarin.forms, plugin, ProXamTabs</PackageTags>
+    <PackageIconUrl>https://static1.squarespace.com/static/588b0188b3db2b265e8e19e2/588b07b2f5e231fc132b5bb9/5aa1891371c10bdd94effa59/1520538974620/Icon-iman_chris_lamontv1.jpg?format=750w</PackageIconUrl>
+    <PackageTags>xamarin, windows, ios, android, xamarin.forms, plugin, tabs, proxamtabs</PackageTags>
     
     <Title>ProXamTabs Plugin for Xamarin and Windows</Title>
     <Summary>Summary of nuget</Summary>
