@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Plugin.ProXamTabs.Shared;
 using Xamarin.Forms;
 
 namespace PXTabs.Sample.Core

@@ -1,13 +1,11 @@
-﻿<Properties StartupConfiguration="{10CAA279-315E-43B1-A4DB-0D1FAD10144D}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="PXTabs/PXTabsView.xaml">
+﻿<Properties StartupConfiguration="{CEB6312E-0DF9-4CD2-849F-D60622650CE2}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProXamTabs/Shared/PXTabsView.xaml">
     <Files>
-      <File FileName="PXTabs/PXTab.xaml" Line="48" Column="23" />
-      <File FileName="PXTabs/PXTab.xaml.cs" Line="305" Column="1" />
-      <File FileName="PXTabs/PXTabsLayout.xaml" Line="2" Column="24" />
-      <File FileName="PXTabs/PXTabsLayout.xaml.cs" Line="16" Column="42" />
-      <File FileName="PXTabs/PXTabsView.xaml" Line="6" Column="55" />
-      <File FileName="PXTabs/PXTabsView.xaml.cs" Line="26" Column="10" />
-      <File FileName="PXTabs/BasePXTabsLayout.cs" Line="8" Column="57" />
+      <File FileName="ProXamTabs/Shared/PXTabsView.xaml" Line="25" Column="31" />
+      <File FileName="ProXamTabs/Shared/PXTabsView.xaml.cs" Line="25" Column="40" />
+      <File FileName="ProXamTabs/Shared/PXTabViewTemplate.xaml" Line="9" Column="1" />
+      <File FileName="ProXamTabs/Shared/PXTabViewTemplate.xaml.cs" Line="22" Column="20" />
+      <File FileName="ProXamTabs/Shared/BasePXTabsLayout.cs" Line="15" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -16,10 +14,13 @@
       <Catchpoint exceptionName="System.Exception" includeSubclasses="True" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.PXTabs.Sample.Droid PreferredExecutionTarget="Android.Phone_7.0" />
+  <MonoDevelop.Ide.ItemProperties.PXTabs.Sample.Droid PreferredExecutionTarget="Android.nexus5-8_0" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.PXTabs.Sample.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.1CE66A12-D35B-40ED-9DD5-D8D493C46652">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.PXTabs.Sample.iOS>
   <MultiItemStartupConfigurations />
+  <DisabledProjects>
+    <String>PXTabs/PXTabs.csproj</String>
+  </DisabledProjects>
 </Properties>
