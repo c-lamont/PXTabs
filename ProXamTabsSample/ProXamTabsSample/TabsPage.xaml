@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProXamTabsSample.TabsPage"
-             xmlns:pxTabs="clr-namespace:Plugin.ProXamTabs.Shared;assembly=Plugin.ProXamTabs">
+             xmlns:pxTabs="clr-namespace:Plugin.ProXamTabs.Shared;assembly=Plugin.ProXamTabs"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true">
     <ContentPage.Content>
         <pxTabs:PXTabsView
             x:Name="tabsView"
