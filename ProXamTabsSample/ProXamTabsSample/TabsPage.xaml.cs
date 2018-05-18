@@ -31,8 +31,10 @@ namespace ProXamTabsSample
             _tabs = new List<PXTab>()
             {
                  CreateTab(1, new HomeView(), "Home", "ProXamTabsSample.Resources.ic_home_32dp.jpg", "ProXamTabsSample.Resources.ic_home_gray_32dp.png", Color.Gray, Color.Gray, 0),
-                 CreateTab(2, new ContactsView(), "Contacts", "ProXamTabsSample.Resources.ic_contact_32dp.png", "ProXamTabsSample.Resources.ic_contact_gray_32dp.png", Color.Blue, Color.Gray, 3),
-                 CreateTab(3, new SearchView(), "Search", "ProXamTabsSample.Resources.ic_search_32dp.png", "ProXamTabsSample.Resources.ic_search_gray_32dp.png", Color.Red, Color.Gray, 200)
+                 CreateTab(2, new ContactsView(), "Contacts", "ProXamTabsSample.Resources.ic_contact_32dp.png", "ProXamTabsSample.Resources.ic_contact_gray_32dp.png", Color.Blue, Color.Gray, 0),
+                 CreateTab(3, new SearchView(), "Search", "ProXamTabsSample.Resources.ic_search_32dp.png", "ProXamTabsSample.Resources.ic_search_gray_32dp.png", Color.Red, Color.Gray, 0),
+                 CreateTab(4, new SearchView(), "Fourth", "ProXamTabsSample.Resources.ic_search_32dp.png", "ProXamTabsSample.Resources.ic_search_gray_32dp.png", Color.Red, Color.Gray, 0),
+                 CreateTab(5, new SearchView(), "Fifth", "ProXamTabsSample.Resources.ic_search_32dp.png", "ProXamTabsSample.Resources.ic_search_gray_32dp.png", Color.Red, Color.Gray, 0)
             };
             
             tabsView.Tabs = _tabs;
