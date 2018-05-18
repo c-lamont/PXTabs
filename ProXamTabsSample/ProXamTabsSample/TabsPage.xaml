@@ -9,7 +9,7 @@
         <pxTabs:PXTabsView
             x:Name="tabsView"
             BorderColor="Teal"
-            SliderColor="Teal"
+            SliderColor="Purple"
             IsBorderOnBottom="False"
             IsBorderVisible="True"
             IsSliderOnBottom="False"
