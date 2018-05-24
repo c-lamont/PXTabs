@@ -14,6 +14,7 @@
             IsBorderVisible="True"
             IsSliderOnBottom="False"
             IsSliderVisible="True"
-            IsTabBarOnTop="False"/>
+            IsTabBarOnTop="False"
+            SelectedTabIndex="1"/>
     </ContentPage.Content>
 </ContentPage>
