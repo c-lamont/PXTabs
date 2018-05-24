@@ -100,7 +100,7 @@ namespace Plugin.ProXamTabs.Shared
 
         private void TabSelected(int index)
         {            
-            if (Tabs.Count() > index)
+            if (Tabs?.Count() > index)
             {
                 TabSelected(Tabs.ElementAt(index));
             }
