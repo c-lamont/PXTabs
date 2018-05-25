@@ -4,26 +4,30 @@
 - Check out the `TabsPage` in the examples for implementation.
 
 ## NuGet
-https://www.nuget.org/packages/Plugin.ProXamTabs/
+https://www.nuget.org/packages/Plugin.ProXamTabs
 
 ## Implementation
 All properties are bindable.
 
 ### PXTabsView
-1. If implementing in Xaml, add the namespace `xmlns:pxTabs="clr-namespace:PXTabs;assembly=PXTabs"`.
-2. Add the view to your page:
+1. If implementing in Xaml, add the namespace `xmlns:pxTabs="clr-namespace:Plugin.ProXamTabs.Shared;assembly=Plugin.ProXamTabs""`.
+2. Add the view to your page, set the tab bar on top or bottom by setting `IsTabBarOnTop`:
 ```
 <pxTabs:PXTabsView
     x:Name="tabsView"
     BorderColor="Teal"
     SliderColor="Teal"
-    IsBorderVisible="true"
-    IsSliderVisible="true" />
+    IsBorderOnBottom="False"
+    IsBorderVisible="True"
+    IsSliderOnBottom="False"
+    IsSliderVisible="True"
+    IsTabBarOnTop="False"/>
 ```
 3. Create a list of `PXTab`s and and them to the tab view: `tabsView.Tabs = [YourListOfTabs];`, or bind the list directly. The `PXTab` is fully customisable:
 ```
 new PXTab()
 {
+    TabId = 1,
     TabView = new HomeView(),
     Text = "Home",
     SelectedImage = "tab_home",

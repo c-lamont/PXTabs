@@ -1,0 +1,89 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.0;netstandard2.0;MonoAndroid80;Xamarin.iOS10;uap10.0.15063;Xamarin.TVOS10;Xamarin.WatchOS10;Xamarin.Mac20;</TargetFrameworks>
+    <AssemblyName>Plugin.ProXamTabs</AssemblyName>
+    <RootNamespace>Plugin.ProXamTabs</RootNamespace>
+    <PackageId>Plugin.ProXamTabs</PackageId>
+    
+    <Product>$(AssemblyName) ($(TargetFramework))</Product>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
+    <Version>1.0.0.0</Version>
+    <PackageVersion>1.5.6.0</PackageVersion>
+    <PackOnBuild>true</PackOnBuild>
+    <NeutralLanguage>en</NeutralLanguage>
+    <LangVersion>default</LangVersion>
+    <DefineConstants>$(DefineConstants);</DefineConstants>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">true</GenerateDocumentationFile>
+    <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    
+    <!--TODO: Fill these in-->
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl>https://www.nuget.org/packages/Plugin.ProXamTabs/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/c-lamont/PXTabs</RepositoryUrl>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageIconUrl>https://static1.squarespace.com/static/588b0188b3db2b265e8e19e2/588b07b2f5e231fc132b5bb9/5aa1891371c10bdd94effa59/1520538974620/Icon-iman_chris_lamontv1.jpg?format=750w</PackageIconUrl>
+    <PackageTags>xamarin, windows, ios, android, xamarin.forms, plugin, tabs, proxamtabs</PackageTags>
+    
+    <Title>ProXamTabs Plugin for Xamarin and Windows</Title>
+    <Summary>Summary of nuget</Summary>
+    <Description>Plugin Description</Description>
+
+    <Owners>Chris Lamont</Owners>
+    <Authors>Chris Lamont</Authors>
+    <Copyright>Copyright 2018</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.2.2" PrivateAssets="All" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
+    <Compile Include="Shared\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'uap10.0.15063' ">
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="5.2.3" />
+    <Compile Include="Platforms\UWP\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'MonoAndroid80' ">
+    <Compile Include="Platforms\Android\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'Xamarin.iOS10' ">
+    <Compile Include="Platforms\iOS\**\*.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'Xamarin.TVOS10' ">
+    <Compile Include="Platforms\TVOS\**\*.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'Xamarin.WatchOS10' ">
+    <Compile Include="Platforms\WatchOS\**\*.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'Xamarin.Mac20' ">
+    <Compile Include="Platforms\macOS\**\*.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Remove="Shared\BasePXTabsLayout.cs" />
+    <None Remove="Shared\PXTab.xaml.cs" />
+    <None Remove="Shared\PXTabsView.xaml.cs" />
+  </ItemGroup>
+
+
+  <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
+</Project>

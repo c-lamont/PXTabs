@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Plugin.ProXamTabs.Shared.PXTab">
+    <ContentView.Content>
+        <StackLayout
+            x:Name="tabContainer"
+            Padding="0,6,0,2"
+            HorizontalOptions="FillAndExpand"
+            Spacing="0">
+            <AbsoluteLayout
+                x:Name="tabImageLayout"
+                HeightRequest="36"
+                WidthRequest="36"
+                HorizontalOptions="Center">
+                <Image
+                    x:Name="tabImageUnselected"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds=".5,.5,24,24"                    
+                    Aspect="AspectFit" />
+                <Image
+                    x:Name="tabImageSelected"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds=".5,.5,24,24"
+                    Aspect="AspectFit" />
+                <Frame
+                    x:Name="badgeLayout"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    AbsoluteLayout.LayoutBounds="1,0,16,16"
+                    CornerRadius="8"
+                    HasShadow="false"
+                    BackgroundColor="Red"
+                    Padding="0"
+                    OutlineColor="White"
+                    IsClippedToBounds="true"
+                    IsVisible="false">
+                    <Label
+                        x:Name="badgeLabel"
+                        TextColor="White"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        XAlign="Center"
+                        YAlign="Center"
+                        FontSize="10" />
+                </Frame>
+            </AbsoluteLayout>
+            <Label
+                x:Name="tabLabel"
+                HorizontalOptions="Fill"
+                XAlign="Center"
+                FontSize="12"
+                IsVisible="false" 
+                LineBreakMode="NoWrap"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

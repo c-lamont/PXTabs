@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\ic_contact_32dp.png" />
+    <None Remove="Resources\ic_contact_gray_32dp.png" />
+    <None Remove="Resources\ic_home_32dp.png" />
+    <None Remove="Resources\ic_home_gray_32dp.png" />
+    <None Remove="Resources\ic_search_32dp.png" />
+    <None Remove="Resources\ic_search_gray_32dp.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ic_contact_32dp.png" />
+    <EmbeddedResource Include="Resources\ic_contact_gray_32dp.png" />
+    <EmbeddedResource Include="Resources\ic_home_32dp.png" />
+    <EmbeddedResource Include="Resources\ic_home_gray_32dp.png" />
+    <EmbeddedResource Include="Resources\ic_search_32dp.png" />
+    <EmbeddedResource Include="Resources\ic_search_gray_32dp.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ProXamTabs\ProXamTabs.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ContactsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="HomeView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SearchView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TabsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
