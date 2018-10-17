@@ -1,3 +1,6 @@
+# Not Maintained!
+Xamarin Forms now implements the ability to create tab layouts. This package still works well if you want a more customized tab ayout.
+
 # PXTabs
 - A tab layout that is more customizable and easier to use than trying to implement the native layouts. 
 - Written entirely in Forms with no native code.
